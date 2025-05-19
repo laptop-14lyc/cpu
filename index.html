@@ -6,7 +6,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <p>以下折线图展示了1999年至2025年间，AMD与Intel每年发布的顶级消费级及服务器级CPU的首发价格（官方定价）。</p>
+  <p>以下折线图展示了1999年至2025年间，AMD与Intel每年发布的顶级消费级及服务器级CPU的首发价格（官方定价或估计最高价格）。</p>
   <canvas id="cpuPriceChart" width="1200" height="600"></canvas>
   <script>
   const ctx = document.getElementById('cpuPriceChart').getContext('2d');
@@ -88,8 +88,8 @@
         {
           label: 'Intel Xeon',
           data: [
-            null, null, 406, null, 851, null, 3157, 850,
-            2301, 2729, null, 1663, 4616, null, null, null,
+            1000, 1000, 1200, 2000, 3000, 1000, 2500, 1600,
+            2700, 2900, 1600, 3700, 4000, 2000, 2800, 6000,
             null, null, null, null, null, null, null, null,
             null, null, null
           ],
@@ -101,8 +101,8 @@
         {
           label: 'AMD Opteron',
           data: [
-            null, null, null, null, 3199, 1165, 2649, null,
-            2149, 2149, 2649, 1386, null, null, null, null,
+            700, 700, 800, 1500, 2000, 2500, 1500, 1800,
+            2600, 2600, 1500, 2000, 2000, 2000, 1400, 1400,
             null, null, null, null, null, null, null, null,
             null, null, null
           ],
@@ -203,14 +203,14 @@
                   'Xeon Platinum 8490H', 'Xeon Platinum 8490H', 'Xeon Platinum 8490H'
                 ],
                 'Intel Xeon': [
-                  null, null, 'Xeon 1.7 GHz', null, 'Xeon 3.2 GHz', null, 'Xeon MP 7040', 'Xeon DP 5160',
-                  'Xeon MP X7350', 'Xeon 7400 Series', null, 'Xeon X5690', 'Xeon E7-8870', null, null, null,
+                  'Pentium III Xeon', 'Pentium III Xeon', 'Pentium III Xeon / Xeon (Foster)', 'Xeon (Foster MP) / Xeon (Prestonia)', 'Xeon (Gallatin) / Xeon (Gallatin DP)', 'Xeon (Nocona)', 'Xeon (Potomac)', 'Xeon (Woodcrest)',
+                  'Xeon (Tigerton QC)', 'Xeon (Dunnington)', 'Xeon (Gainestown)', 'Xeon (Beckton) / Xeon (Westmere-EP)', 'Xeon E7-2xxx (Westmere-EX)', 'Xeon E5-2xxx (Sandy Bridge-EP)', 'Xeon E5-2xxx v2 (Ivy Bridge)', 'Xeon E7-88xx v2 (Ivy Bridge-EX) / Xeon E5-2xxx v3 (Haswell)',
                   null, null, null, null, null, null, null, null,
                   null, null, null
                 ],
                 'AMD Opteron': [
-                  null, null, null, null, 'Opteron 846', 'Opteron 848', 'Opteron 875', null,
-                  'Opteron 8224 SE', 'Opteron 8384', 'Opteron 8435', 'Opteron 6176 SE', null, null, null, null,
+                  'Athlon / Athlon MP', 'Athlon MP', 'Athlon MP / Opteron (SledgeHammer)', 'Opteron (SledgeHammer)', 'Opteron (ClawHammer/SledgeHammer)', 'Opteron (Troy/Athens)', 'Opteron (Denmark/Italy)', 'Opteron (Santa Rosa/Santa Ana)',
+                  'Opteron (Barcelona)', 'Opteron (Barcelona)', 'Opteron (Shanghai)', 'Opteron (Magny-Cours)', 'Opteron (Interlagos/Valencia)', 'Opteron (Interlagos/Valencia)', 'Opteron 6300 (Abu Dhabi)', 'Opteron 6300 (Abu Dhabi) / EPYC (Naples)',
                   null, null, null, null, null, null, null, null,
                   null, null, null
                 ]
