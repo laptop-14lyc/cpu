@@ -84,6 +84,32 @@
           backgroundColor: 'rgba(0, 128, 0, 0.2)',
           fill: false,
           tension: 0.1
+        },
+        {
+          label: 'Intel Xeon',
+          data: [
+            null, null, 406, null, 851, null, 3157, 850,
+            2301, 2729, null, 1663, 4616, null, null, null,
+            null, null, null, null, null, null, null, null,
+            null, null, null
+          ],
+          borderColor: 'rgba(0, 0, 255, 1)', // 蓝色
+          backgroundColor: 'rgba(0, 0, 255, 0.2)',
+          fill: false,
+          tension: 0.1
+        },
+        {
+          label: 'AMD Opteron',
+          data: [
+            null, null, null, null, 3199, 1165, 2649, null,
+            2149, 2149, 2649, 1386, null, null, null, null,
+            null, null, null, null, null, null, null, null,
+            null, null, null
+          ],
+          borderColor: 'rgba(255, 215, 0, 1)', // 金色
+          backgroundColor: 'rgba(255, 215, 0, 0.2)',
+          fill: false,
+          tension: 0.1
         }
       ]
     },
@@ -155,7 +181,7 @@
                   'Core i9-11900K',
                   'Core i9-13900K',
                   'Core i9-14900K',
-                  'Core i9-12900KS',  // 原“285K”修正为合理存在的顶级型号
+                  'Core 285K',  // 原“285K”修正为合理存在的顶级型号
                   '-'
                 ],
                 'Threadripper': [
@@ -175,6 +201,18 @@
                   '-', '-', '-', '-', '-', '-', '-', '-',
                   '-', '-', 'Xeon Platinum 8180', 'Xeon Platinum 9282', 'Xeon Platinum 8280', 'Xeon Platinum 8380', 'Xeon Platinum 8380H', 'Xeon Platinum 8490H',
                   'Xeon Platinum 8490H', 'Xeon Platinum 8490H', 'Xeon Platinum 8490H'
+                ],
+                'Intel Xeon': [
+                  null, null, 'Xeon 1.7 GHz', null, 'Xeon 3.2 GHz', null, 'Xeon MP 7040', 'Xeon DP 5160',
+                  'Xeon MP X7350', 'Xeon 7400 Series', null, 'Xeon X5690', 'Xeon E7-8870', null, null, null,
+                  null, null, null, null, null, null, null, null,
+                  null, null, null
+                ],
+                'AMD Opteron': [
+                  null, null, null, null, 'Opteron 846', 'Opteron 848', 'Opteron 875', null,
+                  'Opteron 8224 SE', 'Opteron 8384', 'Opteron 8435', 'Opteron 6176 SE', null, null, null, null,
+                  null, null, null, null, null, null, null, null,
+                  null, null, null
                 ]
               };
               const label = context.dataset.label || '';
