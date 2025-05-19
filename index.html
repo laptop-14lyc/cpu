@@ -23,10 +23,10 @@
           {
             label: 'AMD',
             data: [
-              799, 849, 899, 999, 733, 827, 1031, 827,
-              999, 999, 999, 999, 999, 999, 999, 999,
-              999, 999, 499, 499, 749, 799, 799, 799,
-              799, 799, 799
+              700, 279, 270, 580, 739, 899, 1000, 999,
+              799, 555, 355, 299, 245, 199, 920, 920,
+              199, null, 499, 329, 749, 799, 799, 799,
+              699, null, null
             ],
             borderColor: 'rgba(255, 99, 132, 1)',
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
@@ -36,10 +36,10 @@
           {
             label: 'Intel',
             data: [
-              754, 819, 819, 819, 999, 999, 999, 999,
-              999, 999, 999, 999, 999, 999, 999, 999,
-              999, 999, 359, 359, 499, 499, 499, 499,
-              499, 499, 499
+              669, 819, 562, 637, 925, 999, 999, 999,
+              999, 1060, 999, 999, 999, 1099, 999, 999,
+              999, 1723, 1999, 1999, 513, 979, 539, 589,
+              650, null, null
             ],
             borderColor: 'rgba(54, 162, 235, 1)',
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
@@ -62,16 +62,16 @@
               label: function(context) {
                 const cpuNames = {
                   'AMD': [
-                    'Athlon 750', 'Athlon 850', 'Athlon 900', 'Athlon 950', 'Athlon 1000', 'Athlon 1100', 'Athlon 1200', 'Athlon 1300',
-                    'Athlon 1400', 'Athlon 1500', 'Athlon 1600', 'Athlon 1700', 'Athlon 1800', 'Athlon 1900', 'Athlon 2000', 'Athlon 2100',
-                    'Athlon 2200', 'Athlon 2300', 'Ryzen 7 1800X', 'Ryzen 7 2700X', 'Ryzen 9 3950X', 'Ryzen 9 5950X', 'Ryzen 9 7950X', 'Ryzen 9 7950X3D',
-                    'Ryzen 9 9950X', 'Ryzen 9 9950X3D', 'Ryzen 9 9950X3D'
+                    'Athlon (K7)', 'Athlon Thunderbird', 'Athlon XP', 'Athlon XP', 'Athlon 64', 'Athlon 64 FX', 'Athlon 64 FX', 'Athlon 64 FX',
+                    'Athlon 64 FX', 'Phenom X4', 'Phenom II X4', 'Phenom II X6', 'FX-8150', 'FX-8350', 'FX-9590', 'FX-9590',
+                    'FX-8370', '-', 'Ryzen 7 1800X', 'Ryzen 7 2700X', 'Ryzen 9 3950X', 'Ryzen 9 5950X', 'Ryzen 9 5950X', 'Ryzen 9 7950X',
+                    'Ryzen 9 7950X3D', '-', '-'
                   ],
                   'Intel': [
-                    'Pentium III 600MHz', 'Pentium III 800MHz', 'Pentium III 1GHz', 'Pentium 4 1.4GHz', 'Pentium 4 2GHz', 'Pentium 4 2.4GHz', 'Pentium 4 2.8GHz', 'Pentium 4 3GHz',
-                    'Pentium 4 3.2GHz', 'Pentium 4 3.4GHz', 'Pentium 4 3.6GHz', 'Pentium 4 3.8GHz', 'Pentium D 805', 'Pentium D 820', 'Pentium D 830', 'Pentium D 840',
-                    'Pentium D 850', 'Pentium D 860', 'Core i7-8700K', 'Core i9-9900K', 'Core i9-9900KS', 'Core i9-10900K', 'Core i9-11900K', 'Core i9-12900K',
-                    'Core i9-13900K', 'Core i9-14900K', 'Core i9-14900K'
+                    'Pentium III', 'Pentium 4', 'Pentium 4', 'Pentium 4', 'Pentium 4 Extreme', 'Pentium 4 EE', 'Pentium EE', 'Core 2 Extreme',
+                    'Core 2 Extreme', 'Core 2 Extreme', 'Core i7 EE', 'Core i7 EE', 'Core i7 EE', 'Core i7 EE', 'Core i7 EE', 'Core i7 EE',
+                    'Core i7 EE', 'Core i7 EE', 'Core i9 EE', 'Core i9 EE', 'Core i9-9900KS', 'Core i9-10980XE', 'Core i9-11900K', 'Core i9-13900K',
+                    'Core i9-14900K', '-', '-'
                   ]
                 };
                 const label = context.dataset.label || '';
@@ -100,7 +100,10 @@
               display: true,
               text: '首发价格（美元）'
             },
-            beginAtZero: true
+            beginAtZero: true,
+            ticks: {
+              stepSize: 10
+            }
           }
         }
       }
