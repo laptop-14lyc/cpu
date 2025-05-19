@@ -2,11 +2,11 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>1999–2025年AMD与Intel顶级消费级CPU首发价格趋势图</title>
+  <title>1999–2025年AMD与Intel顶级消费级及服务器级CPU首发价格趋势图</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <p>以下折线图展示了1999年至2025年间，AMD与Intel每年发布的顶级消费级CPU的首发价格（官方定价）。</p>
+  <p>以下折线图展示了1999年至2025年间，AMD与Intel每年发布的顶级消费级及服务器级CPU的首发价格（官方定价）。</p>
   <canvas id="cpuPriceChart" width="1200" height="600"></canvas>
   <script>
   const ctx = document.getElementById('cpuPriceChart').getContext('2d');
@@ -21,7 +21,7 @@
       ],
       datasets: [
         {
-          label: 'AMD',
+          label: 'AMD 消费级',
           data: [
             700, 279, 270, 580, 739, 899, 1000, 999,
             799, 555, 355, 299, 245, 199, 920, 920,
@@ -34,7 +34,7 @@
           tension: 0.1
         },
         {
-          label: 'Intel',
+          label: 'Intel 消费级',
           data: [
             669, 819, 562, 637, 925, 999, 999, 999,
             999, 1060, 999, 999, 999, 1099, 999, 999,
@@ -47,7 +47,7 @@
           tension: 0.1
         },
         {
-          label: 'Threadripper',
+          label: 'AMD Threadripper',
           data: [
             null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null,
@@ -58,6 +58,32 @@
           backgroundColor: 'rgba(255, 165, 0, 0.2)',
           fill: false,
           tension: 0.1
+        },
+        {
+          label: 'AMD EPYC',
+          data: [
+            null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null,
+            null, null, 4000, 6999, 6999, 7999, 7999, 11805,
+            11900, 10200, 11900
+          ],
+          borderColor: 'rgba(128, 0, 128, 1)', // 紫色
+          backgroundColor: 'rgba(128, 0, 128, 0.2)',
+          fill: false,
+          tension: 0.1
+        },
+        {
+          label: 'Intel Xeon Scalable',
+          data: [
+            null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null,
+            null, null, 10000, 20000, 10000, 10000, 10000, 10000,
+            10000, 10000, 10000
+          ],
+          borderColor: 'rgba(0, 128, 0, 1)', // 绿色
+          backgroundColor: 'rgba(0, 128, 0, 0.2)',
+          fill: false,
+          tension: 0.1
         }
       ]
     },
@@ -66,7 +92,7 @@
       plugins: {
         title: {
           display: true,
-          text: '1999–2025年AMD与Intel顶级消费级CPU首发价格趋势图（单位：美元）'
+          text: '1999–2025年AMD与Intel顶级消费级及服务器级CPU首发价格趋势图（单位：美元）'
         },
         tooltip: {
           mode: 'index',
@@ -74,71 +100,81 @@
           callbacks: {
             label: function(context) {
               const cpuNames = {
-                'AMD': [
-  'Athlon (K7)', 
-  'Athlon Thunderbird', 
-  'Athlon XP 1900+', 
-  'Athlon XP 2800+', 
-  'Athlon 64 3200+', 
-  'Athlon 64 FX-53', 
-  'Athlon 64 FX-57', 
-  'Athlon 64 FX-62',
-  'Athlon 64 FX-74', 
-  'Phenom X4 9850', 
-  'Phenom II X4 965', 
-  'Phenom II X6 1090T', 
-  'FX-8150', 
-  'FX-8350', 
-  'FX-9590', 
-  'FX-9590',
-  'FX-8370', 
-  '-', 
-  'Ryzen 7 1800X', 
-  'Ryzen 7 2700X', 
-  'Ryzen 9 3950X', 
-  'Ryzen 9 5950X', 
-  'Ryzen 9 5950X', 
-  'Ryzen 9 7950X',
-  'Ryzen 9 7950X3D', 
-  'Ryzen 9 9950X3D', 
-  '-'
-]
-,
-                'Intel': [
-  'Pentium III 600MHz', 
-  'Pentium 4 1.5GHz', 
-  'Pentium 4 2.0GHz', 
-  'Pentium 4 3.06GHz', 
-  'Pentium 4 Extreme Edition 3.2GHz', 
-  'Pentium 4 Extreme Edition 3.46GHz', 
-  'Pentium Extreme Edition 955', 
-  'Core 2 Extreme X6800',
-  'Core 2 Extreme QX6700', 
-  'Core 2 Extreme QX9770', 
-  'Core i7-965 Extreme Edition', 
-  'Core i7-980X Extreme Edition', 
-  'Core i7-3960X Extreme Edition', 
-  'Core i7-3970X Extreme Edition', 
-  'Core i7-4960X Extreme Edition', 
-  'Core i7-5960X Extreme Edition',
-  'Core i7-6950X Extreme Edition', 
-  'Core i7-6950X Extreme Edition',  // 重复年份
-  'Core i9-7980XE Extreme Edition', 
-  'Core i9-9980XE Extreme Edition', 
-  'Core i9-9900KS', 
-  'Core i9-10980XE Extreme Edition', 
-  'Core i9-11900K', 
-  'Core i9-13900K',
-  'Core i9-14900K', 
-  'Core i9-12900KS',  // 原“285K”修正为合理存在的顶级型号
-  '-'
-]
-,
+                'AMD 消费级': [
+                  'Athlon (K7)',
+                  'Athlon Thunderbird',
+                  'Athlon XP 1900+',
+                  'Athlon XP 2800+',
+                  'Athlon 64 3200+',
+                  'Athlon 64 FX-53',
+                  'Athlon 64 FX-57',
+                  'Athlon 64 FX-62',
+                  'Athlon 64 FX-74',
+                  'Phenom X4 9850',
+                  'Phenom II X4 965',
+                  'Phenom II X6 1090T',
+                  'FX-8150',
+                  'FX-8350',
+                  'FX-9590',
+                  'FX-9590',
+                  'FX-8370',
+                  '-',
+                  'Ryzen 7 1800X',
+                  'Ryzen 7 2700X',
+                  'Ryzen 9 3950X',
+                  'Ryzen 9 5950X',
+                  'Ryzen 9 5950X',
+                  'Ryzen 9 7950X',
+                  'Ryzen 9 7950X3D',
+                  'Ryzen 9 9950X3D',
+                  '-'
+                ],
+                'Intel 消费级': [
+                  'Pentium III 600MHz',
+                  'Pentium 4 1.5GHz',
+                  'Pentium 4 2.0GHz',
+                  'Pentium 4 3.06GHz',
+                  'Pentium 4 Extreme Edition 3.2GHz',
+                  'Pentium 4 Extreme Edition 3.46GHz',
+                  'Pentium Extreme Edition 955',
+                  'Core 2 Extreme X6800',
+                  'Core 2 Extreme QX6700',
+                  'Core 2 Extreme QX9770',
+                  'Core i7-965 Extreme Edition',
+                  'Core i7-980X Extreme Edition',
+                  'Core i7-3960X Extreme Edition',
+                  'Core i7-3970X Extreme Edition',
+                  'Core i7-4960X Extreme Edition',
+                  'Core i7-5960X Extreme Edition',
+                  'Core i7-6950X Extreme Edition',
+                  'Core i7-6950X Extreme Edition',  // 重复年份
+                  'Core i9-7980XE Extreme Edition',
+                  'Core i9-9980XE Extreme Edition',
+                  'Core i9-9900KS',
+                  'Core i9-10980XE Extreme Edition',
+                  'Core i9-11900K',
+                  'Core i9-13900K',
+                  'Core i9-14900K',
+                  'Core i9-12900KS',  // 原“285K”修正为合理存在的顶级型号
+                  '-'
+                ],
                 'Threadripper': [
                   '-', '-', '-', '-', '-', '-', '-', '-',
                   '-', '-', '-', '-', '-', '-', '-', '-',
                   '-', '-', '1950X', '2990WX', '3970X', 'PRO 3995WX', 'PRO 3995WX', 'PRO 5995WX',
                   'PRO 7995WX', '285K-', '-'
+                ],
+                'AMD EPYC': [
+                  '-', '-', '-', '-', '-', '-', '-', '-',
+                  '-', '-', '-', '-', '-', '-', '-', '-',
+                  '-', '-', 'EPYC 7601', 'EPYC 7742', 'EPYC 7742', 'EPYC 7763', 'EPYC 7763', 'EPYC 9654',
+                  'EPYC 9754', 'EPYC 9754S', 'EPYC 9754'
+                ],
+                'Intel Xeon Scalable': [
+                  '-', '-', '-', '-', '-', '-', '-', '-',
+                  '-', '-', '-', '-', '-', '-', '-', '-',
+                  '-', '-', 'Xeon Platinum 8180', 'Xeon Platinum 9282', 'Xeon Platinum 8280', 'Xeon Platinum 8380', 'Xeon Platinum 8380H', 'Xeon Platinum 8490H',
+                  'Xeon Platinum 8490H', 'Xeon Platinum 8490H', 'Xeon Platinum 8490H'
                 ]
               };
               const label = context.dataset.label || '';
@@ -169,7 +205,7 @@
           },
           beginAtZero: true,
           ticks: {
-            stepSize: 10
+            stepSize: 100 // 调整步长以适应更高的价格
           }
         }
       }
