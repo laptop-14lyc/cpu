@@ -51,7 +51,7 @@
           data: [
             null, null, null, null, null, null, null, null,
             null, null, null, null, null, null, null, null,
-            null, null, 999, 1799, 1999, 5489, 5489, 6499,
+            null, 199, 999, 1799, 1999, 5489, 5489, 6499,
             9999, null, null
           ],
           borderColor: 'rgba(255, 165, 0, 1)',
@@ -75,17 +75,65 @@
             label: function(context) {
               const cpuNames = {
                 'AMD': [
-                  'Athlon (K7)', 'Athlon Thunderbird', 'Athlon XP', 'Athlon XP', 'Athlon 64', 'Athlon 64 FX', 'Athlon 64 FX', 'Athlon 64 FX',
-                  'Athlon 64 FX', 'Phenom X4', 'Phenom II X4', 'Phenom II X6', 'FX-8150', 'FX-8350', 'FX-9590', 'FX-9590',
-                  'FX-8370', '-', 'Ryzen 7 1800X', 'Ryzen 7 2700X', 'Ryzen 9 3950X', 'Ryzen 9 5950X', 'Ryzen 9 5950X', 'Ryzen 9 7950X',
-                  'Ryzen 9 7950X3D', '-', '9950X3D'
-                ],
+  'Athlon (K7)', 
+  'Athlon Thunderbird', 
+  'Athlon XP 1900+', 
+  'Athlon XP 2800+', 
+  'Athlon 64 3200+', 
+  'Athlon 64 FX-53', 
+  'Athlon 64 FX-57', 
+  'Athlon 64 FX-62',
+  'Athlon 64 FX-74', 
+  'Phenom X4 9850', 
+  'Phenom II X4 965', 
+  'Phenom II X6 1090T', 
+  'FX-8150', 
+  'FX-8350', 
+  'FX-9590', 
+  'FX-9590',
+  'FX-8370', 
+  '-', 
+  'Ryzen 7 1800X', 
+  'Ryzen 7 2700X', 
+  'Ryzen 9 3950X', 
+  'Ryzen 9 5950X', 
+  'Ryzen 9 5950X', 
+  'Ryzen 9 7950X',
+  'Ryzen 9 7950X3D', 
+  'Ryzen 9 9950X3D', 
+  '-'
+]
+,
                 'Intel': [
-                  'Pentium III', 'Pentium 4', 'Pentium 4', 'Pentium 4', 'Pentium 4 Extreme', 'Pentium 4 EE', 'Pentium EE', 'Core 2 Extreme',
-                  'Core 2 Extreme', 'Core 2 Extreme', 'Core i7 EE', 'Core i7 EE', 'Core i7 EE', 'Core i7 EE', 'Core i7 EE', 'Core i7 EE',
-                  'Core i7 EE', 'Core i7 EE', 'Core i9 EE', 'Core i9 EE', 'Core i9-9900KS', 'Core i9-10980XE', 'Core i9-11900K', 'Core i9-13900K',
-                  'Core i9-14900K', '-', '-'
-                ],
+  'Pentium III 600MHz', 
+  'Pentium 4 1.5GHz', 
+  'Pentium 4 2.0GHz', 
+  'Pentium 4 3.06GHz', 
+  'Pentium 4 Extreme Edition 3.2GHz', 
+  'Pentium 4 Extreme Edition 3.46GHz', 
+  'Pentium Extreme Edition 955', 
+  'Core 2 Extreme X6800',
+  'Core 2 Extreme QX6700', 
+  'Core 2 Extreme QX9770', 
+  'Core i7-965 Extreme Edition', 
+  'Core i7-980X Extreme Edition', 
+  'Core i7-3960X Extreme Edition', 
+  'Core i7-3970X Extreme Edition', 
+  'Core i7-4960X Extreme Edition', 
+  'Core i7-5960X Extreme Edition',
+  'Core i7-6950X Extreme Edition', 
+  'Core i7-6950X Extreme Edition',  // 重复年份
+  'Core i9-7980XE Extreme Edition', 
+  'Core i9-9980XE Extreme Edition', 
+  'Core i9-9900KS', 
+  'Core i9-10980XE Extreme Edition', 
+  'Core i9-11900K', 
+  'Core i9-13900K',
+  'Core i9-14900K', 
+  'Core i9-12900KS',  // 原“285K”修正为合理存在的顶级型号
+  '-'
+]
+,
                 'Threadripper': [
                   '-', '-', '-', '-', '-', '-', '-', '-',
                   '-', '-', '-', '-', '-', '-', '-', '-',
